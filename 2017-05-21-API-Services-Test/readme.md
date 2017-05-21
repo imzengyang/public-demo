@@ -48,50 +48,58 @@ Enter `s` at any time to create a snapshot of the db
 ]
 ```
 至此，一个简单的api接口服务器创建成功。
-现在有如下接口文档
-| Method  | Path | Description |
-| ------------- | ------------- | ------------- |
-| `GET` | `/users` | Return list of users |
-| `GET` | `/users/1` | Return user with id === 1 |
-| `GET` | `/users/2` | Return user with id === 2 |
-| `GET` | `/users/1/posts` | Return list of any posts with userId === 1 |
-| `GET` | `/users/1/posts/1` | Return post with userId === 1 && id === 1 |
-| `GET` | `/users/1/posts/1/comments` | Return list of any comments with postId === 1 |
-| `GET` | `/users/1/posts/1/comments/1` | Return comment with postId === 1 && id === 1 |
-| `GET` | `/users/1/posts/1/comments/2` | Return comment with postId === 1 && id === 2 |
-| `GET` | `/users/1/comments` | Return list of any comments with userId === 1 |
-| `GET` | `/users/2/comments` | Return list of any comments with userId === 2 |
-| `GET` | `/users/1/comments/1` | Return comment with userId === 1 && id === 1 |
-| `GET` | `/users/2/comments/2` | Return comment with userId === 2 && id === 2 |
-| `GET` | `/posts` | Return list of all posts |
-| `GET` | `/posts/1` | Return post with id === 1 |
-| `GET` | `/posts/1/comments` | Return list of all comments with postId === 1 |
-| `GET` | `/posts/1/comments/1` | Return comment with postId === 1 && id === 1 |
-| `GET` | `/posts/1/comments/2` | Return comment with postId === 1 && id === 2 |
-| `GET` | `/comments` | Return list of all comments |
-| `GET` | `/comments/1` | Return comment with id === 1 |
-| `GET` | `/comments/2` | Return comment with id === 2 |
-| `POST` | `/users` | Create new user |
-| `POST` | `/posts` | Create new post |
-| `POST` | `/comments` | Create new comment |
-| `PUT` | `/users/1` | Replace user by id |
-| `PUT` | `/posts/1` | Replace post by id |
-| `PUT` | `/comments/1` | Replace comment by id |
-| `PATCH` | `/users/1` | Update user by id |
-| `PATCH` | `/posts/1` | Update post by id |
-| `PATCH` | `/comments/1` | Update comment by id |
-| `DELETE` | `/users/1` | Remove user by id (could cause orphaned posts/comments. Refer to Roadmap below.) |
-| `DELETE` | `/posts/1` | Remove post by id (could cause orphaned comments. Refer to Roadmap below.) |
-| `DELETE` | `/comments/1` | Remove comment by id |
+现在有如下接口说明文档  
+
+
+### Normal Slash Routing
+
+ Method  | Path | Description 
+--|--|--
+ `GET` | `/users` | Return list of users 
+ `GET` | `/users/1` | Return user with id === 1 
+ `GET` | `/users/2` | Return user with id === 2 
+ `GET` | `/users/1/posts` | Return list of any posts with userId === 1 
+ `GET` | `/users/1/posts/1` | Return post with userId === 1 && id === 1 
+ `GET` | `/users/1/posts/1/comments` | Return list of any comments with postId === 1 
+ `GET` | `/users/1/posts/1/comments/1` | Return comment with postId === 1 && id === 1 
+ `GET` | `/users/1/posts/1/comments/2` | Return comment with postId === 1 && id === 2 
+ `GET` | `/users/1/comments` | Return list of any comments with userId === 1 
+ `GET` | `/users/2/comments` | Return list of any comments with userId === 2 
+ `GET` | `/users/1/comments/1` | Return comment with userId === 1 && id === 1 
+ `GET` | `/users/2/comments/2` | Return comment with userId === 2 && id === 2 
+ `GET` | `/posts` | Return list of all posts 
+ `GET` | `/posts/1` | Return post with id === 1 
+ `GET` | `/posts/1/comments` | Return list of all comments with postId === 1 
+ `GET` | `/posts/1/comments/1` | Return comment with postId === 1 && id === 1 
+ `GET` | `/posts/1/comments/2` | Return comment with postId === 1 && id === 2 
+ `GET` | `/comments` | Return list of all comments 
+ `GET` | `/comments/1` | Return comment with id === 1 
+ `GET` | `/comments/2` | Return comment with id === 2
+ `POST` | `/users` | Create new user 
+ `POST` | `/posts` | Create new post 
+ `POST` | `/comments` | Create new comment 
+ `PUT` | `/users/1` | Replace user by id 
+ `PUT` | `/posts/1` | Replace post by id 
+ `PUT` | `/comments/1` | Replace comment by id 
+ `PATCH` | `/users/1` | Update user by id 
+ `PATCH` | `/posts/1` | Update post by id 
+ `PATCH` | `/comments/1` | Update comment by id 
+ `DELETE` | `/users/1` | Remove user by id (could cause orphaned posts/comments. Refer to Roadmap below.) 
+ `DELETE` | `/posts/1` | Remove post by id (could cause orphaned comments. Refer to Roadmap below.) 
+ `DELETE` | `/comments/1` | Remove comment by id 
+
+
+
+
 
 ### 创建接口自动化测试
 ### *前言*
 现在提供如下接口测试用例  
 
-请求方法|请求路径| 发送数据|预期结果|说明
---|--|--|--|--
-Get|http://localhost:3000/users/2||{"id": 1,"name": "therebelrobot","location": "USA"} | 返回用户id为2的用户信息
-Post|http://localhost:3000/users/1|{"id": 4,"name": "JackMa","location": "China"}|{"id": 3,"name": "JackMa","location": "China"} | 添加一位新的用户，服务器创建成功返回新用户信息
+请求方法     |请求路径     | 发送数据     |预期结果     |     说明
+     --|--|--|--|--
+Get|http://localhost:3000/users/2 |  | {"id": 1,"name": "therebelrobot","location": "USA"} | 返回用户id为2的用户信息
+Post|http://localhost:3000/users/1 | {"id": 4,"name": "JackMa","location": "China"} | {"id": 3,"name": "JackMa","location": "China"} | 添加一位新的用户，服务器创建成功返回新用户信息
 
 
 ### 1.配置项目
