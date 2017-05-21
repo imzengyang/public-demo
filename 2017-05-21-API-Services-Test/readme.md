@@ -95,10 +95,11 @@ Enter `s` at any time to create a snapshot of the db
 ### 创建接口自动化测试
 ### *前言*
 现在提供如下接口测试用例  
-请求方法|请求路径| 发送数据|预期结果|说明
---|--|--|--|--
-Get|http://localhost:3000/users/2| null |{"id": 1,"name": "therebelrobot","location": "USA"} | 返回用户id为2的用户信息
-Post|http://localhost:3000/users|{"id": 4,"name": "JackMa","location": "China"}|{"id": 4,"name": "JackMa","location": "China"} | 添加一位新的用户，服务器创建成功返回新用户信息
+
+| 请求方法   |      请求路径      |  发送数据 |预期结果|说明|
+|----------|:-------------:|------:|:--------:|:------:|:----:|
+|Get|http://localhost:3000/users/2||{"id": 2,"name": "visiting-user","location": "UK"} | 返回用户id为2的用户信息|
+|Post|http://localhost:3000/users|{"id": 4,"name": "JackMa","location": "China"}|{"id": 4,"name": "JackMa","location": "China"} | 添加一位新的用户，服务器创建成功返回新用户信息|
 
 
 
