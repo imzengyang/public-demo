@@ -8,6 +8,6 @@
 ### 2017年-05-14日 使用cucumber && selenium && node.js实现web自动化测试 demo
 
 [代码传送门](https://github.com/imzengyang/public-demo/tree/master/2017-05-14-selenium-cucumber/selenium-cucumber-demo) https://github.com/imzengyang/public-demo/tree/master/2017-05-14-selenium-cucumber/selenium-cucumber-demo  
-[视频传送门](http://i.youku.com/i/UNDY0MTE2MTExMg==/playlists?spm=a2hzp.8244740.0.0)
+[视频传送门](http://i.youku.com/i/UNDY0MTE2MTExMg==/playlists?spm=a2hzp.8244740.0.0) http://i.youku.com/i/UNDY0MTE2MTExMg==/playlists?spm=a2hzp.8244740.0.0  
 ### 2017年-05-21日 使用cucumber && node.js 创建json-services-api 自动化测试
 [传送门](https://github.com/imzengyang/public-demo/tree/master/2017-05-21-API-Services-Test) https://github.com/imzengyang/public-demo/tree/master/2017-05-21-API-Services-Test
