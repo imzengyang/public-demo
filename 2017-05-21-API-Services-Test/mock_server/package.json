@@ -1,0 +1,16 @@
+{
+  "name": "mocke-data",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dbjson":"json-mock db.json",
+    "userjson": "json-mock user.json"
+  },
+  "author": "zhaozengyang",
+  "license": "MIT",
+  "dependencies": {
+    "json-mock": "^0.1.0"
+  }
+}
